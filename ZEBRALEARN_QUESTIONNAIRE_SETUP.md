@@ -20,6 +20,6 @@ Supabase is the right fit here. It gives Nuance Media a secure, searchable respo
 
 4. Deploy and submit one test response. Confirm it appears in Supabase and the notification email arrives.
 
-The direct client URL is: `https://nuancemedia.agency/zebra-learn-blinkit-questionnaire`.
+The direct client URL is: `https://nuancemedia.agency/zebra-learn-blinkit-questionnaire.html`.
 
-On the Apache host, the `.html` version redirects to this extensionless URL.
+This Vercel project is configured to retain `.html` URLs, so use the exact link above when sharing it with ZebraLearn.
