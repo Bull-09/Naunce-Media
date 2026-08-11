@@ -23,7 +23,7 @@ Supabase is the right fit here. It gives Nuance Media a secure, searchable respo
 
    Optional SMTP variables: `SMTP_HOST` (defaults to `smtp.hostinger.com`) and `SMTP_PORT` (defaults to `587`).
 
-4. Deploy and submit one test response. In Supabase Table Editor, open `zebralearn_blinkit_questionnaire_responses` to see every answer in its own column. The raw submission table is `zebralearn_blinkit_questionnaires`.
+4. Deploy and submit one test response. Responses are stored as JSON in the `answers` column of the `zebralearn_blinkit_questionnaires` table.
 
 The direct client URL is: `https://nuancemedia.agency/zebra-learn-blinkit-questionnaire.html`.
 
