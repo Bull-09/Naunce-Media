@@ -21,10 +21,11 @@ module.exports = async function handler(req, res) {
     const databaseResponse = await fetch(`${supabaseUrl.replace(/\/$/, "")}/rest/v1/zebralearn_blinkit_questionnaires`, { method: "POST", headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}`, "Content-Type": "application/json", Prefer: "return=minimal" }, body: JSON.stringify({ contact_name: response.contactName, contact_email: response.contactEmail, answers: response }) });
     if (!databaseResponse.ok) throw new Error("database_write_failed");
     const smtpUser = process.env.SMTP_USER, smtpPassword = process.env.SMTP_PASSWORD, recipient = process.env.ZEBRALEARN_QUESTIONNAIRE_TO || smtpUser;
-    if (!smtpUser || !smtpPassword || !recipient) throw new Error("email_not_configured");
-    const rows = Object.entries(response).map(([key, value]) => `<tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">${escapeHtml(key)}</td><td style="padding:8px 12px;border:1px solid #ddd">${escapeHtml(Array.isArray(value) ? value.join(", ") : value).replaceAll("\n", "<br>")}</td></tr>`).join("");
-    const transporter = nodemailer.createTransport({ host: process.env.SMTP_HOST || "smtp.hostinger.com", port: Number(process.env.SMTP_PORT || 587), secure: Number(process.env.SMTP_PORT || 587) === 465, auth: { user: smtpUser, pass: smtpPassword } });
-    await transporter.sendMail({ from: `"Nuance Media" <${smtpUser}>`, to: recipient, replyTo: response.contactEmail, subject: `ZebraLearn Blinkit questionnaire — ${response.contactName}`, html: `<h2>New ZebraLearn × Blinkit questionnaire</h2><table style="border-collapse:collapse">${rows}</table>` });
+    if (smtpUser && smtpPassword && recipient) {
+      const rows = Object.entries(response).map(([key, value]) => `<tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">${escapeHtml(key)}</td><td style="padding:8px 12px;border:1px solid #ddd">${escapeHtml(Array.isArray(value) ? value.join(", ") : value).replaceAll("\n", "<br>")}</td></tr>`).join("");
+      const transporter = nodemailer.createTransport({ host: process.env.SMTP_HOST || "smtp.hostinger.com", port: Number(process.env.SMTP_PORT || 587), secure: Number(process.env.SMTP_PORT || 587) === 465, auth: { user: smtpUser, pass: smtpPassword } });
+      await transporter.sendMail({ from: `"Nuance Media" <${smtpUser}>`, to: recipient, replyTo: response.contactEmail, subject: `ZebraLearn Blinkit questionnaire — ${response.contactName}`, html: `<h2>New ZebraLearn × Blinkit questionnaire</h2><table style="border-collapse:collapse">${rows}</table>` });
+    }
     return res.status(200).json({ ok: true });
   } catch (error) { console.error("ZebraLearn questionnaire failed:", error.message); return res.status(500).json({ error: "Unable to save questionnaire" }); }
 };

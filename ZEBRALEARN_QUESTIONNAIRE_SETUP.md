@@ -8,10 +8,15 @@ Supabase is the right fit here. It gives Nuance Media a secure, searchable respo
 
 1. Create a Supabase project.
 2. In its SQL Editor, run `supabase/zebralearn_questionnaires.sql`.
-3. In Vercel → Project → Settings → Environment Variables, add:
+3. In Vercel → Project → Settings → Environment Variables, add the required database values:
 
-   - `SUPABASE_URL` — the project URL
+   - `SUPABASE_URL` — `https://utacrtodhylencnazzxg.supabase.co`
    - `SUPABASE_SERVICE_ROLE_KEY` — the service-role key (server-only; never expose it in the page)
+
+   These two values are all that is required to save questionnaire responses in Supabase.
+
+   To also receive an email notification for each submission, add:
+
    - `SMTP_USER` — the sending mailbox
    - `SMTP_PASSWORD` — that mailbox’s SMTP password
    - `ZEBRALEARN_QUESTIONNAIRE_TO` — the Nuance inbox to receive instant submission emails
