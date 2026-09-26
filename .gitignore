@@ -4,3 +4,6 @@ process.php
 src/
 assets/scss/
 node_modules/
+.agents/
+skills-lock.json
+.env*
