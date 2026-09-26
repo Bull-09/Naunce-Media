@@ -3,3 +3,4 @@
 process.php
 src/
 assets/scss/
+node_modules/

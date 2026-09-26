@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const { insertSubmission } = require("./_lib/supabase");
+const { insertSubmission } = require("./_lib/storage");
 
 const REQUIRED = ["blinkitRole", "businessPriority", "primaryKpi", "purchaseMode", "sellerHubAccess", "contactName", "contactEmail"];
 const RANKS = ["rankRevenue", "rankDiscovery", "rankLaunches", "rankCompetition", "rankStock", "rankVisibility"];

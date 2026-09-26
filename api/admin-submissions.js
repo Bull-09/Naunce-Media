@@ -1,5 +1,5 @@
 const { isAuthenticated } = require("./_lib/auth");
-const { listSubmissions } = require("./_lib/supabase");
+const { listSubmissions } = require("./_lib/storage");
 
 module.exports = async function handler(req, res) {
   res.setHeader("Cache-Control", "no-store");

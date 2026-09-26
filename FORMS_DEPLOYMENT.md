@@ -10,9 +10,24 @@ All three pages include `noindex` metadata and Vercel also sends an
 `X-Robots-Tag` header. The admin password supplied for this build is stored as a
 one-way PBKDF2 hash, not as readable text.
 
-## One-time Supabase setup
+## Recommended: Neon Postgres through Vercel
 
-1. Create or open the Nuance Media Supabase project.
+The APIs prefer Neon whenever `DATABASE_URL` or `POSTGRES_URL` exists. If neither
+exists, they fall back to the existing Supabase configuration.
+
+1. Open the `nuance-media` project in Vercel.
+2. Go to **Storage → Create Database → Neon** and connect it to Production,
+   Preview and Development.
+3. Open the database SQL editor and run `database/form_submissions.sql`.
+4. Redeploy the latest `main` commit.
+
+Vercel injects the database URL automatically. Both forms and the admin dashboard
+use the same `form_submissions` table, so no public database credentials are
+placed in the browser.
+
+## Supabase fallback
+
+1. Create, resume or open the Nuance Media Supabase project.
 2. Open **SQL Editor**, paste `supabase/form_submissions.sql`, and run it.
 3. In Vercel, add these Production environment variables:
 
