@@ -1,6 +1,6 @@
 const { insertSubmission } = require("./_lib/supabase");
 
-const REQUIRED = ["brandName", "websiteUrl", "monthlyAdSpend", "platforms", "roas", "aov", "monthlyOrders", "bottleneck", "wantsAudit"];
+const REQUIRED = ["brandName", "websiteUrl", "monthlyAdSpend", "platforms", "roas", "aov", "monthlyOrders", "bottlenecks", "wantsAudit"];
 const clean = (value) => Array.isArray(value) ? value.map(clean) : String(value || "").trim().slice(0, 3000);
 
 module.exports = async function handler(req, res) {
