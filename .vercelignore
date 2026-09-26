@@ -1,0 +1,8 @@
+.git
+.DS_Store
+.htaccess
+process.php
+src
+assets/scss
+assets/css/*.map
+

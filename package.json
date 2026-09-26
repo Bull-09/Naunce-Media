@@ -1,0 +1,9 @@
+{
+  "name": "nuance-media-website",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "busboy": "^1.6.0",
+    "nodemailer": "^9.0.3"
+  }
+}

@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const { insertSubmission } = require("./_lib/supabase");
 
 const REQUIRED = ["blinkitRole", "businessPriority", "primaryKpi", "purchaseMode", "sellerHubAccess", "contactName", "contactEmail"];
 const RANKS = ["rankRevenue", "rankDiscovery", "rankLaunches", "rankCompetition", "rankStock", "rankVisibility"];
@@ -15,11 +16,7 @@ module.exports = async function handler(req, res) {
   if (ranks.some((rank) => !/^[1-6]$/.test(rank)) || new Set(ranks).size !== 6) return res.status(400).json({ error: "Please provide a unique rank for each priority." });
   const response = Object.fromEntries(Object.entries(body).filter(([key]) => key !== "website").map(([key, value]) => [key, clean(value)]));
   try {
-    const supabaseUrl = process.env.SUPABASE_URL;
-    const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-    if (!supabaseUrl || !supabaseKey) throw new Error("supabase_not_configured");
-    const databaseResponse = await fetch(`${supabaseUrl.replace(/\/$/, "")}/rest/v1/zebralearn_blinkit_questionnaires`, { method: "POST", headers: { apikey: supabaseKey, Authorization: `Bearer ${supabaseKey}`, "Content-Type": "application/json", Prefer: "return=minimal" }, body: JSON.stringify({ contact_name: response.contactName, contact_email: response.contactEmail, answers: response }) });
-    if (!databaseResponse.ok) throw new Error("database_write_failed");
+    await insertSubmission({ form_type: "zebralearn_blinkit", contact_name: response.contactName, contact_email: response.contactEmail, contact_phone: response.contactPhone || null, answers: response });
     const smtpUser = process.env.SMTP_USER, smtpPassword = process.env.SMTP_PASSWORD, recipient = process.env.ZEBRALEARN_QUESTIONNAIRE_TO || smtpUser;
     if (smtpUser && smtpPassword && recipient) {
       const rows = Object.entries(response).map(([key, value]) => `<tr><td style="padding:8px 12px;border:1px solid #ddd;font-weight:700">${escapeHtml(key)}</td><td style="padding:8px 12px;border:1px solid #ddd">${escapeHtml(Array.isArray(value) ? value.join(", ") : value).replaceAll("\n", "<br>")}</td></tr>`).join("");

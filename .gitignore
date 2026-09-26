@@ -1,0 +1,5 @@
+.DS_Store
+.vercel
+process.php
+src/
+assets/scss/

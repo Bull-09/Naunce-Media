@@ -1,0 +1,56 @@
+# BEGIN .htaccess
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Redirect www to non-www (remove if you prefer www)
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+# Force HTTPS (if supported)
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Remove .html extension from URLs
+RewriteCond %{THE_REQUEST} /\S+\.html [NC]
+RewriteRule (.*)\.html$ /$1 [R=301,L]
+
+# Allow accessing files without .html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)/?$ $1.html [L]
+
+</IfModule>
+
+# Disable directory browsing
+Options -Indexes
+
+# Set expiration headers for static files
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
+# Compress text, HTML, JavaScript, and CSS
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/javascript application/x-javascript application/json
+</IfModule>
+
+# Protect sensitive files
+<FilesMatch "\.(htaccess|htpasswd|ini|log|conf|env)$">
+  Order Deny,Allow
+  Deny from all
+</FilesMatch>
+
+# Custom error pages
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+
+# END .htaccess

@@ -1,0 +1,126 @@
+
+
+/* Container for images */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+/* Style for images */
+.blow-up-image {
+    width: 80%;
+    max-width: 300px;
+    margin-bottom: 30px;
+    opacity: 1;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+/* Adding a transition to the transform and opacity properties */
+
+.hero__sub-title {
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+
+/* Responsive corrections for the custom home-page hero. */
+@media only screen and (max-width: 767px) {
+    .hero__area {
+        min-height: auto;
+    }
+
+    .hero__area .container {
+        max-width: 100%;
+        padding-inline: 20px;
+    }
+
+    .hero__content {
+        padding-top: 120px;
+        padding-bottom: 64px;
+    }
+
+    .hero__content > div:first-child {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .hero__content > div:first-child > a:first-child {
+        flex: 1;
+        min-width: 0;
+        font-size: 18px;
+    }
+
+    .hero__content > div:first-child > a[aria-label] {
+        flex: 0 0 auto;
+    }
+
+    .hero__content > div:first-child > a[aria-label] img {
+        width: 72px !important;
+        max-width: 72px;
+        margin: 0 !important;
+    }
+
+    .hero__title-wrapper {
+        width: 100%;
+        max-width: 100%;
+        margin: 48px 0 32px;
+    }
+
+    .heroTitle {
+        max-width: 100%;
+        margin-top: 0;
+        font-size: clamp(42px, 12vw, 52px);
+        line-height: 0.98;
+        overflow-wrap: anywhere;
+    }
+
+    .hero__sub-title {
+        position: static !important;
+        inset: auto !important;
+        max-width: 100%;
+        padding-top: 24px;
+        font-size: 17px;
+        line-height: 1.55;
+    }
+
+    .hero__content > img {
+        display: block;
+        width: 78px;
+        max-width: 78px;
+        margin: 18px 0 0;
+    }
+
+    .hero__content .experience {
+        position: absolute;
+        right: 12px;
+        bottom: 54px;
+    }
+
+    .hero__content .experience img {
+        width: 58px !important;
+        height: 58px !important;
+    }
+
+    .hero__area .hero1_bg {
+        left: 20%;
+        width: 110%;
+        max-width: none;
+        opacity: 0.72;
+    }
+
+    .roll__area {
+        position: relative;
+        z-index: 2;
+    }
+
+    .footer-menu li a,
+    .footer-menu-2 li a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+}

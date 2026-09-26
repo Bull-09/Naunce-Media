@@ -3,9 +3,10 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/zebra-learn-blinkit-questionnaire.html",
+      "source": "/(zebra-learn-blinkit-questionnaire|growth-audit|nm-admin).html",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" }
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" },
+        { "key": "Cache-Control", "value": "private, no-store" }
       ]
     }
   ]
