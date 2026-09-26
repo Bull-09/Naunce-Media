@@ -1,6 +1,6 @@
 const { insertSubmission } = require("./_lib/storage");
 
-const REQUIRED = ["brandName", "websiteUrl", "monthlyAdSpend", "platforms", "roas", "aov", "monthlyOrders", "bottlenecks", "wantsAudit"];
+const REQUIRED = ["brandName", "websiteUrl", "primaryGoal", "monthlyAdSpend", "platforms", "roas", "aov", "monthlyOrders", "bottlenecks", "wantsAudit"];
 const clean = (value) => Array.isArray(value) ? value.map(clean) : String(value || "").trim().slice(0, 3000);
 
 module.exports = async function handler(req, res) {

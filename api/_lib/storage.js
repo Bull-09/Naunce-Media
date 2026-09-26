@@ -54,4 +54,18 @@ async function listSubmissions() {
   return response.json();
 }
 
-module.exports = { insertSubmission, listSubmissions };
+async function checkStorage() {
+  if (hasNeon()) {
+    const sql = await neonClient();
+    await sql`select 1 from form_submissions limit 0`;
+    return "neon";
+  }
+  const { base, key } = supabaseConfig();
+  const response = await fetch(`${base}/rest/v1/form_submissions?select=id&limit=0`, {
+    headers: { apikey: key, Authorization: `Bearer ${key}` },
+  });
+  if (!response.ok) throw new Error(`database_health_failed:${response.status}`);
+  return "supabase";
+}
+
+module.exports = { insertSubmission, listSubmissions, checkStorage };
