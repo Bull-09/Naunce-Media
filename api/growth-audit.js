@@ -8,6 +8,7 @@ module.exports = async function handler(req, res) {
   const body = req.body || {};
   if (body.company) return res.status(200).json({ ok: true });
   const answers = Object.fromEntries(Object.entries(body).filter(([key]) => key !== "company").map(([key, value]) => [key, clean(value)]));
+  if (answers.websiteUrl && !/^https?:\/\//i.test(answers.websiteUrl)) answers.websiteUrl = `https://${answers.websiteUrl}`;
   if (REQUIRED.some((field) => !answers[field])) return res.status(400).json({ error: "Please complete all required questions." });
   try { new URL(answers.websiteUrl); } catch { return res.status(400).json({ error: "Please enter a valid website URL." }); }
   if (answers.wantsAudit === "Yes") {
