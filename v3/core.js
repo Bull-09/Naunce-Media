@@ -213,6 +213,28 @@
   if (hs && (window.innerWidth < 700 || !fine)) $$('.hx', hs).forEach(function (h, i) { if (i >= 7 && i % 2) h.remove(); });
   if (hs) carousel(hs, $('#helix'), { item: '.hx', prev: '#hprev', next: '#hnext', k: 1.18, speed: 7, scroll: true });
 
+
+  /* ---------- fly-through tunnel ---------- */
+  (function tunnel() {
+    var tn = $('#tunnel');
+    if (!tn) return;
+    if (reduce) { tn.classList.add('static'); return; }
+    var layers = $$('.tn-l', tn), n = layers.length, GAP = 1300, vh = window.innerHeight;
+    function upd() {
+      var r = tn.getBoundingClientRect(), total = tn.offsetHeight - window.innerHeight;
+      var p = clamp(-r.top / Math.max(1, total), 0, 1), cam = p * (n - 1) * GAP;
+      layers.forEach(function (el, i) {
+        var z = cam - i * GAP, last = i === n - 1;
+        if (last && z > 0) z = 0;
+        var a = last ? clamp((z + 1800) / 1100, 0, 1) : clamp((z + 2200) / 900, 0, 1) * clamp((650 - z) / 450, 0, 1);
+        el.style.opacity = a.toFixed(3);
+        el.style.transform = 'translate(-50%,-50%) translateZ(' + z.toFixed(0) + 'px)';
+        el.style.pointerEvents = last && a > 0.9 ? 'auto' : 'none';
+      });
+    }
+    window.addEventListener('scroll', upd, { passive: true }); window.addEventListener('resize', upd); upd();
+  })();
+
   /* ---------- lead form ---------- */
   var f = $('#lead');
   if (f) {

@@ -7,30 +7,18 @@
   var LOGO = {"aspect": 1.148105625717566, "shapes": [{"outer": [[-0.174, 0.453], [-0.202, 0.453], [-0.274, 0.399], [-0.37, 0.319], [-0.476, 0.215], [-0.618, 0.049], [-0.728, -0.107], [-0.824, -0.277], [-0.876, -0.391], [-0.914, -0.489], [-0.952, -0.607], [-0.98, -0.721], [-0.998, -0.841], [-0.998, -0.859], [-0.99, -0.867], [-0.976, -0.867], [-0.824, -0.733], [-0.076, -0.035], [0.11, -0.241], [0.132, -0.245], [0.146, -0.235], [0.148, -0.217], [-0.056, 0.205], [-0.166, 0.445]], "holes": [[[-0.192, 0.401], [-0.1, 0.213], [-0.908, -0.731], [-0.936, -0.757], [-0.938, -0.749], [-0.906, -0.617], [-0.852, -0.457], [-0.812, -0.361], [-0.762, -0.259], [-0.688, -0.131], [-0.564, 0.043], [-0.454, 0.171], [-0.304, 0.317], [-0.2, 0.401]]]}, {"outer": [[0.992, 0.867], [0.978, 0.867], [0.734, 0.653], [0.178, 0.141], [0.006, 0.305], [-0.016, 0.307], [-0.03, 0.297], [-0.032, 0.281], [0.286, -0.375], [0.314, -0.375], [0.37, -0.335], [0.47, -0.249], [0.54, -0.179], [0.604, -0.107], [0.682, -0.007], [0.784, 0.153], [0.872, 0.335], [0.938, 0.523], [0.984, 0.729], [0.996, 0.823], [0.996, 0.863]], "holes": [[[0.938, 0.759], [0.938, 0.733], [0.914, 0.611], [0.866, 0.449], [0.804, 0.295], [0.74, 0.169], [0.652, 0.031], [0.548, -0.101], [0.432, -0.223], [0.36, -0.287], [0.306, -0.327], [0.184, -0.075], [0.722, 0.529], [0.896, 0.719]]]}]};
   var S = {
     home: { art: [
-      { src: 'assets/chrome-hand.png', h: 1.35, w: [-0.85, 1.9, 0.8], n: null, rot: -0.18, sp: 0.8, ph: 0.2 },
-      { src: 'assets/dice.png', h: 1.3, w: [3.75, -1.6, 1.2], n: [0.95, 0.35, 1.1], rot: 0.22, sp: 1.0, ph: 1.7 },
-      { src: 'assets/bee.png', h: 1.0, w: [-2.55, 1.5, 1.4], n: [-0.95, 0.75, 1.3], rot: -0.3, sp: 1.3, ph: 3.1 },
-      { src: 'assets/can-paint.png', h: 1.5, w: [4.5, 0.55, -0.5], n: null, rot: 0.35, sp: 0.7, ph: 4.4 },
-      { src: 'assets/can-pencil.png', h: 1.15, w: [-4.1, 1.7, 0.2], n: null, rot: -0.4, sp: 0.9, ph: 5.2 }] },
+      { type: 'knot', s: 1.25, w: [-1.5, 1.2, 0.8], n: [-0.95, 0.8, 1.0], sp: 0.8, ph: 0.2 },
+      { type: 'ico', s: 1.15, w: [3.9, -1.75, 0.6], n: [1.0, 0.45, 1.0], sp: 1.0, ph: 1.7, tint: 'b' }] },
     services: { nx: 0.27, ny: 0.0, ns: 2.3, art: [
-      { src: 'assets/dice.png', h: 1.2, w: [-1.1, 1.45, 0.6], n: [0.95, 0.35, 1.1], rot: 0.22, sp: 1.0, ph: 1.7 },
-      { src: 'assets/bee.png', h: 0.95, w: [-2.8, 1.45, 1.2], n: [-0.95, 0.75, 1.3], rot: -0.3, sp: 1.3, ph: 3.1 },
-      { src: 'assets/can-paint.png', h: 1.3, w: [4.9, -1.4, 0.0], n: null, rot: 0.35, sp: 0.7, ph: 4.4 }] },
+      { type: 'torus', s: 1.25, w: [-1.5, 1.25, 0.8], n: [-0.95, 0.8, 1.0], sp: 0.9, ph: 0.6 }] },
     work: { nx: 0.28, ny: 0.0, ns: 2.3, art: [
-      { src: 'assets/chrome-hand.png', h: 1.3, w: [-1.3, 1.45, 0.8], n: null, rot: -0.18, sp: 0.8, ph: 0.2 },
-      { src: 'assets/bee.png', h: 0.95, w: [4.8, 1.45, 0.9], n: [-0.95, 0.75, 1.3], rot: 0.3, sp: 1.3, ph: 3.1 },
-      { src: 'assets/dice.png', h: 1.1, w: [4.9, -1.9, 0.3], n: [0.95, 0.35, 1.1], rot: 0.22, sp: 1.0, ph: 1.7 }] },
+      { type: 'octa', s: 1.25, w: [-1.5, 1.25, 0.8], n: [-0.95, 0.8, 1.0], sp: 0.9, ph: 1.2, tint: 'c' }] },
     ugc: { nx: 0.27, ny: 0.0, ns: 2.3, art: [
-      { src: 'assets/chrome-hand.png', h: 1.6, w: [-1.3, 1.45, 0.8], n: null, rot: -0.2, sp: 0.8, ph: 0.2 },
-      { src: 'assets/can-pencil.png', h: 1.2, w: [4.9, 1.45, 0.2], n: null, rot: -0.4, sp: 0.9, ph: 5.2 },
-      { src: 'assets/bee.png', h: 0.95, w: [4.9, -1.8, 1.2], n: [-0.95, 0.75, 1.3], rot: -0.3, sp: 1.3, ph: 3.1 }] },
+      { type: 'knot', s: 1.2, w: [-1.5, 1.25, 0.8], n: [-0.95, 0.8, 1.0], sp: 0.8, ph: 2.0, tint: 'b' }] },
     creatives: { nx: 0.27, ny: 0.0, ns: 2.3, art: [
-      { src: 'assets/can-paint.png', h: 1.5, w: [-1.0, 1.45, 0.2], n: null, rot: 0.35, sp: 0.7, ph: 4.4 },
-      { src: 'assets/can-pencil.png', h: 1.2, w: [4.9, -1.7, 0.5], n: [0.95, 0.35, 1.1], rot: -0.4, sp: 0.9, ph: 5.2 },
-      { src: 'assets/dice.png', h: 1.1, w: [-3.2, 1.45, 1.1], n: null, rot: 0.22, sp: 1.0, ph: 1.7 }] },
+      { type: 'torus', s: 1.2, tint: 'b', w: [-1.5, 1.25, 0.8], n: [-0.95, 0.8, 1.0], sp: 0.8, ph: 0.4 }] },
     contact: { nx: 0.27, ny: 0.0, ns: 2.2, art: [
-      { src: 'assets/chrome-hand.png', h: 1.5, w: [-1.2, 1.45, 0.8], n: null, rot: -0.18, sp: 0.8, ph: 0.2 },
-      { src: 'assets/bee.png', h: 0.95, w: [-3.2, 1.45, 1.4], n: [-0.95, 0.75, 1.3], rot: -0.3, sp: 1.3, ph: 3.1 }] }
+      { type: 'ico', s: 1.2, w: [-1.5, 1.25, 0.8], n: [-0.95, 0.8, 1.0], sp: 0.9, ph: 3.0, tint: 'c' }] }
   };
   /* ---------- hero 3D stage ---------- */
   function initStage(host, canvas, hero, cfg) {
@@ -104,19 +92,20 @@
     var rim = new T.PointLight(0x6fe3ff, 2.4, 30); rim.position.set(5, -2, 4); scene.add(rim);
     scene.add(new T.AmbientLight(0xffffff, 0.15));
 
-    /* floating art */
-    var loader = new T.TextureLoader();
-    var art = cfg.art;
-    var items = [];
+    /* floating solids: real 3D chrome geometry, not flat cut-outs */
+    var art = cfg.art, items = [];
+    var geos = {
+      knot: function (z) { return new T.TorusKnotGeometry(0.46 * z, 0.15 * z, 180, 28, 2, 3); },
+      ico: function (z) { return new T.IcosahedronGeometry(0.62 * z, 0); },
+      torus: function (z) { return new T.TorusGeometry(0.5 * z, 0.19 * z, 28, 72); },
+      octa: function (z) { return new T.OctahedronGeometry(0.66 * z, 0); },
+      cube: function (z) { return new T.BoxGeometry(0.85 * z, 0.85 * z, 0.85 * z, 1, 1, 1); }
+    };
+    var tints = { a: 0xf1dfff, b: 0xcfeaff, c: 0xffe3c9 };
     art.forEach(function (a) {
-      loader.load(a.src, function (tex) {
-        tex.encoding = T.sRGBEncoding; tex.anisotropy = 4;
-        var aspect = tex.image.width / tex.image.height;
-        var mat = new T.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false, toneMapped: false, side: T.DoubleSide });
-        var mesh = new T.Mesh(new T.PlaneGeometry(a.h * aspect, a.h), mat);
-        scene.add(mesh); items.push({ mesh: mesh, a: a, born: performance.now() });
-        if (reduce) draw();
-      });
+      var mat = chrome.clone(); mat.color.setHex(tints[a.tint || 'a']);
+      var mesh = new T.Mesh(geos[a.type](a.s || 1), mat);
+      scene.add(mesh); items.push({ mesh: mesh, a: a, born: performance.now() });
     });
 
     /* dust */
@@ -157,16 +146,12 @@
       items.forEach(function (it) {
         var a = it.a, p = wide ? a.w : a.n;
         it.mesh.visible = !!p; if (!p) return;
-        var k = clamp((performance.now() - it.born) / 900, 0, 1), e = 1 - Math.pow(1 - k, 3);
+        var k = clamp((performance.now() - it.born) / 1100, 0, 1), e = 1 - Math.pow(1 - k, 3);
         var depth = 1 + p[2] * 0.35;
-        it.mesh.position.set(
-          p[0] + sx * 0.55 * depth + (wide ? 0 : 0),
-          p[1] + Math.sin(t * a.sp + a.ph) * 0.14 - sy * 0.3 * depth + sc * 0.0012 * depth,
-          p[2]);
-        it.mesh.rotation.z = a.rot + Math.sin(t * a.sp * 0.8 + a.ph) * 0.07;
-        it.mesh.rotation.y = Math.sin(t * 0.45 + a.ph) * 0.35 + sx * 0.3;
-        it.mesh.scale.setScalar((wide ? 1 : 0.7) * (0.6 + 0.4 * e));
-        it.mesh.material.opacity = e;
+        it.mesh.position.set(p[0] + sx * 0.55 * depth, p[1] + Math.sin(t * a.sp + a.ph) * 0.16 - sy * 0.3 * depth + sc * 0.0012 * depth, p[2]);
+        it.mesh.rotation.x = t * 0.28 * a.sp + a.ph - sy * 0.4;
+        it.mesh.rotation.y = t * 0.36 * a.sp + sx * 0.5;
+        it.mesh.scale.setScalar((wide ? 1 : 0.7) * e);
       });
       dust.rotation.y = t * 0.02 + sx * 0.05; dust.position.y = sc * 0.0008;
       renderer.render(scene, camera);
