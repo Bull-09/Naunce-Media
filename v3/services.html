@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Services | Nuance Media</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Performance marketing, UGC, creatives, web and SEO from Nuance Media in Surat.">
+<meta name="description" content="Performance marketing, UGC, web and SEO, and graphic design from Nuance Media in Surat.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700;800&display=swap">
@@ -14,6 +14,7 @@
 <noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
+<div class="sbar" id="sbar" aria-hidden="true"></div>
 <header class="nav" id="nav">
   <div class="wrap nav-in">
     <a class="brand" href="index.html" aria-label="Nuance Media, home"><img src="assets/logo.png" alt="" width="38" height="33"><span>Nuance Media</span></a>
@@ -26,53 +27,85 @@
 </header>
 
 <main id="top">
-<section class="phero">
-  <div class="wrap">
-    <p class="eyebrow">Services</p>
-    <h1 class="hero-title">Meta ads at the core.</h1>
-    <div class="hero-foot"><p class="lede">Everything else exists to make the ads convert.</p><div class="actions"><a class="btn btn-solid" href="contact.html" data-service="Performance marketing">Get a growth plan</a><a class="btn btn-ghost" href="work.html">See the results</a></div></div>
+<section class="phero" id="hero">
+  <div class="stage" id="stage" data-scene="services" aria-hidden="true"><canvas id="gl"></canvas><div class="fallback"><img src="assets/logo.png" alt="" width="520" height="453"></div></div>
+  <div class="wrap hero-in">
+    <p class="crumb"><i></i>Services</p>
+    <h1 class="hero-title"><span class="ln" style="--d:0"><span>Performance</span></span><span class="ln" style="--d:1"><span>marketing,</span></span><span class="ln serif" style="--d:2"><span>engineered.</span></span></h1>
+    <div class="hero-foot"><p class="lede">Meta ads are our core. Everything else on this page exists to make those ads convert harder.</p><div class="actions"><a class="btn btn-solid" href="contact.html" data-service="Performance marketing">Get a growth plan</a><a class="btn btn-ghost" href="work.html">See the results</a></div></div>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap">
-    <div class="svcs">
-      <div class="svc rv"><i>01</i><h3>Performance marketing</h3><div><p>Meta ads for D2C and lead-gen brands, with Google where intent matters. Sales, retargeting, WhatsApp and lead-form funnels.</p><small>Meta ads / Google ads / Retargeting / Lead generation / Weekly reports</small><a class="link" href="contact.html" data-service="Performance marketing">Plan my campaigns</a></div></div>
-      <div class="svc rv"><i>02</i><h3>UGC and video</h3><div><p>Real creators, scripted for Meta, with several hooks per concept so the scroll-stopper shows up in the data.</p><small>Casting / Scripts and hooks / Editing / Captions</small><a class="link" href="ugc.html">See the UGC portfolio</a></div></div>
-      <div class="svc rv"><i>03</i><h3>Ad creatives</h3><div><p>Statics, carousels and offer ads made by the same team that reads the results.</p><small>Statics / Carousels / Brand identity / Social design</small><a class="link" href="creatives.html">See the creative wall</a></div></div>
-      <div class="svc rv" id="web"><i>04</i><h3>Web and SEO</h3><div><p>Landing pages built to convert paid traffic, plus technical and on-page SEO for the traffic that costs nothing.</p><small>Landing pages / Shopify and custom / Technical SEO / Content</small><a class="link" href="contact.html" data-service="Web development">Plan my website</a></div></div>
+<section class="section" id="performance">
+  <div class="wrap rv-wrap">
+    <div class="sec-head rv"><h2 class="h2">How we run <span class="serif">Meta ads.</span></h2><p class="lede">The same loop on every account. It is boring on purpose, because boring compounds.</p></div>
+    <ol class="power">
+      <li class="rv" data-n="1" style="--i:0" data-tilt="8"><h3>Audit</h3><p>Pixel and events, account structure, past creatives, product margins. We find the leaks before spending a rupee.</p><div class="meter"><i style="--w:30%"></i></div></li>
+      <li class="rv" data-n="2" style="--i:1" data-tilt="8"><h3>Creative sprint</h3><p>UGC hooks, statics and carousels built around one clear angle each, so the results teach us something.</p><div class="meter"><i style="--w:55%"></i></div></li>
+      <li class="rv" data-n="3" style="--i:2" data-tilt="8"><h3>Launch and learn</h3><p>Structured campaigns per product and funnel stage. Winners get budget, losers get killed fast.</p><div class="meter"><i style="--w:78%"></i></div></li>
+      <li class="rv" data-n="4" style="--i:3" data-tilt="8"><h3>Report and scale</h3><p>Weekly reports from Ads Manager: spend, purchases, revenue, ROAS, by campaign. Then we scale what holds.</p><div class="meter"><i style="--w:100%"></i></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section sec-ink2" id="services">
+  <div class="wrap rv-wrap">
+    <div class="sec-head rv"><h2 class="h2">The full <span class="serif">toolkit.</span></h2></div>
+    <div class="svc-list rv">
+      <div class="svc" data-open="true"><button class="svc-head" type="button" aria-expanded="true"><span>Performance marketing</span><span class="svc-end"><img class="svc-thumb" src="assets/dice.png" alt=""><span class="plus"></span></span></button>
+        <div class="svc-body"><div class="svc-inner"><div class="svc-grid"><div class="svc-copy"><p class="lede">Meta ads for D2C and lead-gen brands, with Google ads where intent matters. Sales campaigns, retargeting, WhatsApp and lead-form funnels.</p><ul class="tags"><li>Meta ads</li><li>Google ads</li><li>Retargeting</li><li>Lead generation</li><li>Weekly reporting</li></ul><a class="btn btn-solid" href="contact.html" data-service="Performance marketing">Plan my campaigns</a></div><div class="svc-art"><img src="assets/dice.png" alt="" data-tilt="12"></div></div></div></div></div>
+      <div class="svc" data-open="false"><button class="svc-head" type="button" aria-expanded="false"><span>UGC and video</span><span class="svc-end"><img class="svc-thumb" src="assets/chrome-hand.png" alt=""><span class="plus"></span></span></button>
+        <div class="svc-body"><div class="svc-inner"><div class="svc-grid"><div class="svc-copy"><p class="lede">Real creators, scripted for Meta. Several hooks per concept so we can find the opener that stops the scroll.</p><ul class="tags"><li>Creator casting</li><li>Scripts and hooks</li><li>Editing</li><li>Captions</li></ul><a class="btn btn-solid" href="ugc.html">See the UGC portfolio</a></div><div class="svc-art"><img src="assets/chrome-hand.png" alt="" data-tilt="12"></div></div></div></div></div>
+      <div class="svc" data-open="false"><button class="svc-head" type="button" aria-expanded="false"><span id="web">Web and SEO</span><span class="svc-end"><img class="svc-thumb" src="assets/bee.png" alt=""><span class="plus"></span></span></button>
+        <div class="svc-body"><div class="svc-inner"><div class="svc-grid"><div class="svc-copy"><p class="lede">Landing pages and websites built to convert paid traffic, plus technical and on-page SEO for the traffic that costs nothing.</p><ul class="tags"><li>Landing pages</li><li>Shopify and custom builds</li><li>Technical SEO</li><li>Content</li></ul><a class="btn btn-solid" href="contact.html" data-service="Web development">Plan my website</a></div><div class="svc-art"><img src="assets/bee.png" alt="" data-tilt="12"></div></div></div></div></div>
+      <div class="svc" data-open="false"><button class="svc-head" type="button" aria-expanded="false"><span>Graphic design</span><span class="svc-end"><img class="svc-thumb" src="assets/can-paint.png" alt=""><span class="plus"></span></span></button>
+        <div class="svc-body"><div class="svc-inner"><div class="svc-grid"><div class="svc-copy"><p class="lede">Ad creatives, carousels, brand systems and packaging visuals, all made with the performance team in the room.</p><ul class="tags"><li>Ad creatives</li><li>Carousels</li><li>Brand identity</li><li>Social design</li></ul><a class="btn btn-solid" href="creatives.html">See the creative wall</a></div><div class="svc-art"><img src="assets/can-paint.png" alt="" data-tilt="12"></div></div></div></div></div>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv"><h2 class="h2">How it <span class="serif">runs.</span></h2></div>
-    <ol class="steps rv">
-      <li><i>01</i><h3>Audit</h3><p>Tracking, account, creatives and margins checked before any spend.</p></li>
-      <li><i>02</i><h3>Creative sprint</h3><p>One clear angle per concept, so every result teaches us something.</p></li>
-      <li><i>03</i><h3>Launch</h3><p>Campaigns by product and funnel stage. Winners get budget, losers get cut.</p></li>
-      <li><i>04</i><h3>Report</h3><p>Weekly from Ads Manager: spend, purchases, revenue, ROAS.</p></li>
+<section class="section">
+  <div class="wrap rv-wrap"><div class="process-grid">
+    <div class="process-side rv"><h2 class="h2">The first <span class="serif">30 days.</span></h2><p class="lede" style="margin-top:14px">What working with us looks like, week by week.</p><img class="process-art" src="assets/collage.webp" alt="" data-tilt="7" loading="lazy" width="380" height="450"></div>
+    <ol class="timeline" id="timeline">
+      <li class="step"><span class="dot">1</span><h3>Audit and plan</h3><p>Tracking, account, creatives and margins reviewed. You get a written plan with the numbers we will hold ourselves to.</p></li>
+      <li class="step"><span class="dot">2</span><h3>Creative sprint</h3><p>UGC shoots and static concepts, each built around one angle: problem, proof, offer or lifestyle.</p></li>
+      <li class="step"><span class="dot">3</span><h3>Launch</h3><p>Campaigns go live by product and funnel stage. We check spend and results daily for the first two weeks.</p></li>
+      <li class="step"><span class="dot">4</span><h3>First report</h3><p>Spend, purchases, revenue and ROAS by campaign, plus what we learned and what we test next.</p></li>
     </ol>
-  </div>
+  </div></div>
 </section>
-<section class="cta-band"><div class="wrap"><h2 class="rv">Start with an audit.</h2>
-<div class="actions rv"><a class="btn btn-solid" href="contact.html">Get your growth plan</a><a class="btn btn-ghost" href="work.html">See the results</a></div></div></section>
+
+<section class="section sec-ink2">
+  <div class="wrap rv-wrap"><div class="sec-head rv"><h2 class="h2">Questions <span class="serif">we hear.</span></h2></div>
+  <div class="faq rv">
+    <details><summary>What budget do we need to start?</summary><p>It depends on your product and margins. Tell us your monthly ad budget in the growth plan form and we will say honestly whether it is enough to learn from.</p></details>
+    <details><summary>Do you only run Meta ads?</summary><p>Meta is our core. We add Google ads, SEO and landing pages when they help the Meta results or fill a gap in your funnel.</p></details>
+    <details><summary>Who makes the creatives?</summary><p>Our in-house design and UGC team. Creators are cast per brand, and every concept ships with multiple hooks to test.</p></details>
+    <details><summary>How do I see results?</summary><p>You get reports straight from Ads Manager with spend, purchases, revenue and ROAS by campaign, and a call to talk through what they mean.</p></details>
+  </div></div>
+</section>
+<section class="cta-band"><div class="wrap rv-wrap"><h2 class="rv">Ready to scale what works?</h2><p class="lede rv" style="--i:1;margin:0 auto 28px">Tell us about your brand. We reply with a growth plan, not a pitch deck.</p>
+<div class="actions rv" style="--i:2"><a class="btn btn-solid" href="contact.html">Get your growth plan</a><a class="btn btn-ghost" href="work.html">See the results</a></div></div></section>
 
 </main>
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
-      <div><p class="foot-note">Bold. Sharp. Subtle.</p></div>
-      <div><h4>Pages</h4><ul><li><a href="services.html">Services</a></li><li><a href="work.html">Work</a></li><li><a href="ugc.html">UGC</a></li><li><a href="creatives.html">Creatives</a></li></ul></div>
+      <div><p class="foot-note">Swipe right on growth.</p></div>
+      <div><h4>Pages</h4><ul><li><a href="services.html">Services</a></li><li><a href="work.html">Meta ads case studies</a></li><li><a href="ugc.html">UGC portfolio</a></li><li><a href="creatives.html">Creatives</a></li></ul></div>
       <div><h4>Follow</h4><ul><li><a href="https://www.instagram.com/thenuancemedia/" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/the-nuance-media" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/thenuancemedia_" rel="noopener">X</a></li></ul></div>
       <div><h4>Reach us</h4><ul><li><a href="tel:+919054779097">+91 90547 79097</a></li><li><a href="mailto:hi@thenuancemedia.com">hi@thenuancemedia.com</a></li><li>Surat, Gujarat</li></ul></div>
     </div>
-    <div class="legal"><span>2026 Nuance Media</span><span>Made in Surat.</span></div>
+    <div class="mega" aria-hidden="true">Nuance</div>
+    <div class="legal"><span>2026 Nuance Media. All rights reserved.</span><span>Made in Surat.</span></div>
   </div>
 </footer>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image preview"><button type="button" aria-label="Close preview">&times;</button><figure><img alt=""><figcaption></figcaption></figure></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="stage.js"></script>
 <script src="core.js"></script>
 
 </body>

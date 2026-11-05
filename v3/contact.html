@@ -14,6 +14,7 @@
 <noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
+<div class="sbar" id="sbar" aria-hidden="true"></div>
 <header class="nav" id="nav">
   <div class="wrap nav-in">
     <a class="brand" href="index.html" aria-label="Nuance Media, home"><img src="assets/logo.png" alt="" width="38" height="33"><span>Nuance Media</span></a>
@@ -26,19 +27,22 @@
 </header>
 
 <main id="top">
-<section class="phero">
-  <div class="wrap">
-    <p class="eyebrow">Contact</p>
-    <h1 class="hero-title">Get your growth plan.</h1>
-    <div class="hero-foot"><p class="lede">Tell us your brand and monthly budget. We reply with a plan, not a pitch deck.</p><div class="actions"><a class="btn btn-solid" href="tel:+919054779097">Call +91 90547 79097</a><a class="btn btn-ghost" href="mailto:hi@thenuancemedia.com">hi@thenuancemedia.com</a></div></div>
+<section class="phero" id="hero">
+  <div class="stage" id="stage" data-scene="contact" aria-hidden="true"><canvas id="gl"></canvas><div class="fallback"><img src="assets/logo.png" alt="" width="520" height="453"></div></div>
+  <div class="wrap hero-in">
+    <p class="crumb"><i></i>Contact</p>
+    <h1 class="hero-title"><span class="ln" style="--d:0"><span>Let us find</span></span><span class="ln serif" style="--d:1"><span>your nuance.</span></span></h1>
+    <div class="hero-foot"><p class="lede">Tell us about your brand and your monthly ad budget. We reply with a growth plan.</p><div class="actions"><a class="btn btn-solid" href="tel:+919054779097">Call +91 90547 79097</a><a class="btn btn-ghost" href="mailto:hi@thenuancemedia.com">hi@thenuancemedia.com</a></div></div>
   </div>
 </section>
 
-<section class="section" id="contact" style="padding-top:clamp(40px,5vw,72px)">
-  <div class="wrap"><div class="contact-grid">
-    <dl class="details"><div><dt>Studio</dt><dd>Surat, Gujarat, India</dd></div><div><dt>Phone</dt><dd><a href="tel:+919054779097">+91 90547 79097</a></dd></div><div><dt>Email</dt><dd><a href="mailto:hi@thenuancemedia.com">hi@thenuancemedia.com</a></dd></div>
+<section class="section contact" id="contact">
+  <div class="wrap rv-wrap"><div class="contact-grid">
+    <div class="rv"><h2 class="h2">Get your <span class="serif">growth plan.</span></h2><p class="lede" style="margin-top:14px">A short form, a real reply. No sales script.</p>
+      <dl class="details"><div><dt>Studio</dt><dd>Surat, Gujarat, India</dd></div><div><dt>Phone</dt><dd><a href="tel:+919054779097">+91 90547 79097</a></dd></div><div><dt>Email</dt><dd><a href="mailto:hi@thenuancemedia.com">hi@thenuancemedia.com</a></dd></div>
       <div><dt>Follow</dt><dd class="socials"><a href="https://www.instagram.com/thenuancemedia/" rel="noopener">Instagram</a><a href="https://www.linkedin.com/company/the-nuance-media" rel="noopener">LinkedIn</a><a href="https://x.com/thenuancemedia_" rel="noopener">X</a></dd></div></dl>
-    <div class="form-card"><h3>Tell us about your brand</h3>
+      <img class="c-hand" src="assets/chrome-hand.png" alt="" data-tilt="12" width="190" height="190"></div>
+    <div class="form-card rv" style="--i:1"><h3>Tell us about your brand</h3><p>We read every message ourselves.</p>
       <form id="lead" novalidate>
         <div class="fgrid">
           <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" required autocomplete="name"></div>
@@ -51,7 +55,7 @@
             <label class="chip"><input type="checkbox" name="svc" value="Performance marketing"><span>Performance marketing</span></label><label class="chip"><input type="checkbox" name="svc" value="UGC content"><span>UGC content</span></label><label class="chip"><input type="checkbox" name="svc" value="Graphic design"><span>Creatives</span></label><label class="chip"><input type="checkbox" name="svc" value="Web development"><span>Website</span></label><label class="chip"><input type="checkbox" name="svc" value="SEO"><span>SEO</span></label></div></div>
           <div class="field full"><label for="f-msg">Anything else?</label><textarea id="f-msg" name="message" rows="3"></textarea></div>
         </div>
-        <div class="form-foot"><button class="btn btn-solid" type="submit">Prepare my request</button><small>This page prepares an email for you to send.</small></div>
+        <div class="form-foot"><button class="btn btn-solid" type="submit">Prepare my request</button><small>This page cannot send messages itself yet, so it prepares an email for you to send.</small></div>
       </form>
       <div class="result" id="result" hidden tabindex="-1"><p id="result-msg"></p><textarea id="summary" readonly aria-label="Your request details"></textarea><div class="actions"><button class="btn btn-solid" id="copy" type="button">Copy details</button><a class="btn btn-ghost" id="mail" href="mailto:hi@thenuancemedia.com">Open in email app</a></div></div>
     </div>
@@ -62,16 +66,20 @@
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
-      <div><p class="foot-note">Bold. Sharp. Subtle.</p></div>
-      <div><h4>Pages</h4><ul><li><a href="services.html">Services</a></li><li><a href="work.html">Work</a></li><li><a href="ugc.html">UGC</a></li><li><a href="creatives.html">Creatives</a></li></ul></div>
+      <div><p class="foot-note">Swipe right on growth.</p></div>
+      <div><h4>Pages</h4><ul><li><a href="services.html">Services</a></li><li><a href="work.html">Meta ads case studies</a></li><li><a href="ugc.html">UGC portfolio</a></li><li><a href="creatives.html">Creatives</a></li></ul></div>
       <div><h4>Follow</h4><ul><li><a href="https://www.instagram.com/thenuancemedia/" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/company/the-nuance-media" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/thenuancemedia_" rel="noopener">X</a></li></ul></div>
       <div><h4>Reach us</h4><ul><li><a href="tel:+919054779097">+91 90547 79097</a></li><li><a href="mailto:hi@thenuancemedia.com">hi@thenuancemedia.com</a></li><li>Surat, Gujarat</li></ul></div>
     </div>
-    <div class="legal"><span>2026 Nuance Media</span><span>Made in Surat.</span></div>
+    <div class="mega" aria-hidden="true">Nuance</div>
+    <div class="legal"><span>2026 Nuance Media. All rights reserved.</span><span>Made in Surat.</span></div>
   </div>
 </footer>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
 <div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Image preview"><button type="button" aria-label="Close preview">&times;</button><figure><img alt=""><figcaption></figcaption></figure></div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="stage.js"></script>
 <script src="core.js"></script>
 
 </body>
