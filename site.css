@@ -505,3 +505,18 @@ a.svc-card:hover .obj{transform:translate(-6px,-10px) rotate(-6deg) scale(1.05)}
 @keyframes lr-scroll{to{transform:translateX(-50%)}}
 @media (hover:none){.lr-set img{filter:none;opacity:.9}}
 @media (prefers-reduced-motion:reduce){.lr-track{animation:none}.logo-rail{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
+
+/* Phone fixes */
+html,body{overflow-x:clip}
+.hero{overflow-x:clip}
+.answer .tag{font-size:.78rem}
+.foot a,.foot li{overflow-wrap:anywhere}
+@media (max-width:640px){
+  /* screenshots: number labels sit under the image instead of covering it */
+  .proof-tags,.shot-main .proof-tags{position:static;padding:10px 12px 12px;background:#fff;border-top:1px solid var(--line)}
+  .proof-tags span{box-shadow:none}
+  .js .proof .shot{transform:none}
+  /* service cards: leave room for the 3D object under the text */
+  .svc-card{min-height:0;padding-bottom:130px}
+  .svc-card .obj{width:118px;max-height:118px;right:10px;bottom:6px}
+}
