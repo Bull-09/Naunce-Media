@@ -143,7 +143,7 @@
   }
 
   /* ROAS bars */
-  $$('.roas').forEach(function (el) {
+  $$('.roas, .proof').forEach(function (el) {
     if (!hasIO || reduce) { el.classList.add('in'); return; }
     var o = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { el.classList.add('in'); o.disconnect(); } }, { threshold: 0.3 });
     o.observe(el);
