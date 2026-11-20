@@ -431,10 +431,31 @@ a.svc-card:hover .obj{transform:translate(-6px,-10px) rotate(-6deg) scale(1.05)}
 }
 
 /* Receipts: real dashboard screenshots, names blurred */
-.proof{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:clamp(12px,1.6vw,20px);margin-top:clamp(32px,4vw,52px);perspective:1800px}
-.proof-side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,20px);align-items:start}
+.receipts{position:relative;overflow:clip}
+.receipts::before{content:"";position:absolute;inset:-20% 0 auto auto;width:60%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(184,38,246,.22),transparent);pointer-events:none}
+.receipts .wrap{position:relative}
+.receipts .note{color:var(--on-night-dim)}
+.sec-head>.tabs,.tabs{display:inline-flex;grid-auto-flow:column;gap:4px;padding:5px;border-radius:999px;background:var(--night2);border:1px solid var(--night-line)}
+.tabs button{font:600 .92rem/1 var(--f-body);padding:.8em 1.25em;border-radius:999px;border:0;background:transparent;color:var(--on-night-dim);cursor:pointer;transition:background .25s,color .25s}
+.tabs button:hover{color:var(--on-night)}
+.tabs button[aria-selected="true"]{background:var(--on-night);color:var(--night)}
+.rp:focus-visible{outline-offset:8px}
+.proof{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:clamp(12px,1.6vw,20px);perspective:1800px}
+.proof-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,20px);align-items:start}
+.proof-row.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.proof-row .shot img{aspect-ratio:3/1.15;object-fit:cover;object-position:right bottom}
+.proof-row.two .shot img{aspect-ratio:16/8.5;object-fit:contain;object-position:center top;background:#fff}
 .shot{position:relative;margin:0;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -36px rgba(60,10,90,.45);cursor:zoom-in;transition:transform .9s var(--ease),box-shadow .3s}
 .shot:hover{box-shadow:0 36px 70px -34px rgba(60,10,90,.55)}
+.dark .shot{border-color:transparent;box-shadow:0 40px 80px -40px rgba(0,0,0,.9),0 0 0 1px rgba(255,255,255,.08)}
+.dark .shot:hover{box-shadow:0 40px 80px -40px rgba(0,0,0,.9),0 0 0 1px rgba(220,148,255,.5),0 0 60px -10px rgba(184,38,246,.45)}
+/* Diwali card: big number + the Shopify strip as the receipt */
+.dw{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(16px,3vw,40px);align-items:center;padding:clamp(22px,3.4vw,44px);background:linear-gradient(120deg,#fff 40%,var(--purple-soft))}
+.dw-copy{display:grid;gap:8px}
+.dw-big{font:700 clamp(2.8rem,6vw,5.2rem)/.9 var(--f-display);letter-spacing:-.05em;color:var(--ink)}
+.dw-sub{color:var(--dim);font-size:clamp(.95rem,1.3vw,1.1rem)}
+.dw img{width:100%;height:auto;border-radius:12px;border:1px solid var(--line);background:#fff;box-shadow:0 20px 40px -28px rgba(60,10,90,.5)}
+@media (max-width:760px){.dw{grid-template-columns:minmax(0,1fr)}}
 .shot img{width:100%;height:auto;display:block}
 .shot-bar{display:flex;align-items:center;gap:6px;padding:9px 14px;background:var(--bg2);border-bottom:1px solid var(--line);font-size:.78rem;color:var(--dim);white-space:nowrap;overflow:hidden}
 .shot-bar i{width:9px;height:9px;border-radius:50%;background:#d9d3e2;flex:none}
@@ -449,8 +470,10 @@ a.svc-card:hover .obj{transform:translate(-6px,-10px) rotate(-6deg) scale(1.05)}
 .shot-main .proof-tags b{font-size:1.15rem}
 /* 3D: the screenshots arrive tilted in depth and settle flat */
 .js .proof .shot-main{transform:rotateX(14deg) rotateY(-10deg) translateZ(-60px);transform-origin:60% 100%}
-.js .proof .proof-side .shot{transform:rotateX(12deg) rotateY(10deg) translateZ(-40px);transform-origin:40% 100%}
-.js .proof .proof-side .shot:nth-child(2){transition-delay:.12s}
+.js .proof .proof-row .shot{transform:rotateX(12deg) translateY(30px) translateZ(-40px);transform-origin:50% 100%}
+.js .proof .proof-row .shot:nth-child(2){transition-delay:.1s}
+.js .proof .proof-row .shot:nth-child(3){transition-delay:.2s}
 .js .proof.in .shot{transform:none}
-@media (max-width:560px){.proof-side{grid-template-columns:minmax(0,1fr)}.shot-main .proof-tags span{font-size:.78rem}.shot-main .proof-tags b{font-size:.95rem}}
+@media (max-width:900px){.proof-row{grid-template-columns:repeat(2,minmax(0,1fr))}.proof-row .shot:nth-child(3){grid-column:1/-1}}
+@media (max-width:560px){.proof-row,.proof-row.two{grid-template-columns:minmax(0,1fr)}.shot-main .proof-tags span{font-size:.78rem}.shot-main .proof-tags b{font-size:.95rem}.tabs{width:100%}.tabs button{flex:1}}
 @media (prefers-reduced-motion:reduce){.js .proof .shot{transform:none}}

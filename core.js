@@ -49,7 +49,7 @@
     var lbimg = $('img', lb), last = null;
     $$('[data-zoom]').forEach(function (el) {
       el.setAttribute('tabindex', '0'); el.setAttribute('role', 'button');
-      if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', 'Enlarge creative');
+      if (!el.getAttribute('aria-label')) el.setAttribute('aria-label', el.classList.contains('shot') ? 'Enlarge screenshot' : 'Enlarge creative');
       var open = function (e) {
         e.preventDefault(); last = el;
         var im = $('img', el);
@@ -182,6 +182,26 @@
     var d = document.createElement('div'); d.className = 'hp'; d.setAttribute('aria-hidden', 'true');
     d.innerHTML = '<label>Company<input name="company" tabindex="-1" autocomplete="off"></label>';
     f.insertBefore(d, f.firstChild);
+  });
+
+  /* tabs (receipts: Meta Ads / Shopify) */
+  $$('[role="tablist"]').forEach(function (list) {
+    var tabs = $$('[role="tab"]', list);
+    var select = function (t, focus) {
+      tabs.forEach(function (x) {
+        var on = x === t;
+        x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1;
+        var p = document.getElementById(x.getAttribute('aria-controls')); if (p) p.hidden = !on;
+      });
+      if (focus) t.focus();
+    };
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t); });
+      t.addEventListener('keydown', function (e) {
+        var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (k) { e.preventDefault(); select(tabs[(i + k + tabs.length) % tabs.length], true); }
+      });
+    });
   });
 
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
