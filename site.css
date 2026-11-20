@@ -477,3 +477,11 @@ a.svc-card:hover .obj{transform:translate(-6px,-10px) rotate(-6deg) scale(1.05)}
 @media (max-width:900px){.proof-row{grid-template-columns:repeat(2,minmax(0,1fr))}.proof-row .shot:nth-child(3){grid-column:1/-1}}
 @media (max-width:560px){.proof-row,.proof-row.two{grid-template-columns:minmax(0,1fr)}.shot-main .proof-tags span{font-size:.78rem}.shot-main .proof-tags b{font-size:.95rem}.tabs{width:100%}.tabs button{flex:1}}
 @media (prefers-reduced-motion:reduce){.js .proof .shot{transform:none}}
+
+/* Nimbu mirchi: hung at the very end of the footer, for good luck */
+.nazar{display:grid;justify-items:center;gap:10px;margin-top:clamp(28px,4vw,44px);padding-bottom:4px;text-align:center}
+.nazar img{width:66px;height:auto;transform-origin:50% 0;animation:nazar-sway 4.5s ease-in-out infinite;filter:drop-shadow(0 10px 14px rgba(0,0,0,.45))}
+.nazar:hover img{animation-duration:1.6s}
+.nazar p{font:400 italic 1.05rem/1.2 var(--f-serif);color:var(--on-night-dim);letter-spacing:.01em}
+@keyframes nazar-sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}}
+@media (prefers-reduced-motion:reduce){.nazar img{animation:none}}
