@@ -1,13 +1,28 @@
 {
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/final", "destination": "/", "permanent": false },
+    { "source": "/final/:path*", "destination": "/:path*", "permanent": false },
+    { "source": "/v3", "destination": "/", "permanent": true },
+    { "source": "/v3/:path*", "destination": "/:path*", "permanent": true },
+    { "source": "/Graphic%20Designing.html", "destination": "/creatives.html", "permanent": true },
+    { "source": "/Seo%20service.html", "destination": "/website-seo.html", "permanent": true },
+    { "source": "/Social%20Media%20Manager.html", "destination": "/services.html", "permanent": true },
+    { "source": "/Website%20Development.html", "destination": "/website-seo.html", "permanent": true },
+    { "source": "/performace%20marketing.html", "destination": "/meta-ads.html", "permanent": true },
+    { "source": "/career.html", "destination": "/careers.html", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true }
+  ],
   "headers": [
     {
-      "source": "/(zebra-learn-blinkit-questionnaire|growth-audit|nm-admin).html",
+      "source": "/(zebra-learn-blinkit-questionnaire|growth-audit|nm-admin|b2b-growth|local-business-growth|signature|accpeted|application-error).html",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" },
         { "key": "Cache-Control", "value": "private, no-store" }
       ]
-    }
+    },
+    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] },
+    { "source": "/(site.css|core.js|n3d.js)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }] }
   ]
 }

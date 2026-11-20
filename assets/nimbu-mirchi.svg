@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 200" width="80" height="200" role="img" aria-label="Nimbu mirchi">
+  <defs>
+    <radialGradient id="lemon" cx="38%" cy="32%" r="70%">
+      <stop offset="0" stop-color="#fff6a8"/>
+      <stop offset=".45" stop-color="#f7d43a"/>
+      <stop offset="1" stop-color="#d9a91a"/>
+    </radialGradient>
+    <linearGradient id="chilli" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#1f7a35"/>
+      <stop offset=".45" stop-color="#3fb14f"/>
+      <stop offset="1" stop-color="#1c6a2f"/>
+    </linearGradient>
+    <g id="c">
+      <path d="M0 0 C6.5 1.5 7.5 11 5.6 21 C4.4 27.5 1.6 32.5 -0.6 36 C-1.8 30 -4.2 22 -5.2 14 C-6.2 6 -5.2 1.2 0 0 Z" fill="url(#chilli)"/>
+      <path d="M-1.5 5 C-2.4 12 -2 20 -0.8 28" stroke="#9be3a6" stroke-width="1.1" fill="none" stroke-linecap="round" opacity=".55"/>
+      <path d="M-4.6 0.6 C-2.6 -2.6 2.8 -2.8 5 0.4 C3 2.6 -2.6 2.8 -4.6 0.6 Z" fill="#175c27"/>
+      <path d="M0 -0.6 C0.4 -3.6 1.8 -5.4 3.6 -6.4" stroke="#175c27" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <!-- thread -->
+  <path d="M40 0 V178" stroke="#e9e1d0" stroke-width="1.4"/>
+  <circle cx="40" cy="3" r="2.6" fill="none" stroke="#e9e1d0" stroke-width="1.4"/>
+  <!-- lemon -->
+  <ellipse cx="40" cy="15" rx="2.6" ry="3" fill="#cfa017"/>
+  <ellipse cx="40" cy="40" rx="17" ry="21" fill="url(#lemon)"/>
+  <ellipse cx="40" cy="62" rx="2.8" ry="3.2" fill="#cfa017"/>
+  <ellipse cx="33" cy="30" rx="4.5" ry="7" fill="#fffbe0" opacity=".55" transform="rotate(-20 33 30)"/>
+  <!-- chillies, strung alternately left and right -->
+  <use href="#c" transform="translate(37 70) rotate(14)"/>
+  <use href="#c" transform="translate(43 72) rotate(-14)"/>
+  <use href="#c" transform="translate(36 98) rotate(10)"/>
+  <use href="#c" transform="translate(44 100) rotate(-10)"/>
+  <use href="#c" transform="translate(40 126) rotate(3)"/>
+  <!-- charcoal -->
+  <path d="M33 168 L40 164 L48 167 L50 175 L44 181 L35 180 L31 174 Z" fill="#2a2730"/>
+  <path d="M36 168 L41 166 L45 168" stroke="#5b5664" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+</svg>
